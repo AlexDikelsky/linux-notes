@@ -1,0 +1,44 @@
+====================
+grep notes
+====================
+
+Grep stands for g/re/p
+    $ grep [options] [patterns] [files]
+
+
+//can get patterns from a file with `--file={filename}`
+
+
+Regex {{{
+
+    Terms {{{2
+        `?`
+            preceding atom is matched 0 or 1 times
+        `*`
+            preceding atom is matched 0+ times
+        `+`
+            preceding atom is matched 1+ times
+        `{n}`
+            preceding atom is matched exatly `n` times
+        `{n,}`
+            preceding atom is matched `n` or more times
+        `{,m}`
+            preceding atom is matched at most `m` times
+        `{n,m}`
+            preceding atom is matched between `n` and `m` times
+        `|`
+            matches either atom on either side
+        
+        See more with
+        @
+        !man grep
+        /REGULER EXPRESSIONS
+        @
+        
+    }}}2
+    Examples {{{2
+    
+    
+    
+    }}}2
+}}}

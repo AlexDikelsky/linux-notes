@@ -1,0 +1,21 @@
+=============
+setfont examples
+=============
+
+All fonts are automaticly located in 
+
+/usr/share/kbd/consolefonts
+
+To use one of those fonts, type
+
+    $ setfont lat02-08
+  
+    $ setfont iso08.08
+
+    $ setfont iso08.08 -h12
+
+-h set the height of the font
+make sure whatever you're setting is in the /usr/share/kbd/consolefonts direcory
+
+
+go to `kdb-project.org` for more help

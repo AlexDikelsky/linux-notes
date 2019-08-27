@@ -132,6 +132,8 @@ Options like -exec {{{
         On by default, prints the name of all files that 'qualify'
     `delete`
         Deletes all files or directories that qualivy
+    `ok`
+        Asks every time whether you actually want t exec the command
     `exec` {{{2
         //Executes `ls` in the current directory
         //Doesn't have the same behavior with `execdir`
@@ -140,8 +142,25 @@ Options like -exec {{{
         Uses absolute paths always, and doesn't allow `$PATH` to contain `.`
         #MAKE SURE TO HAVE \; AT THE END
         {} is the `character` that is replaced
-        USE THIS OPTION#
-    }}}
+        USE THIS OPTION RATHER THAN JUST -exec#
+        
+        Examples {{{3        
+            Grep for self {{{4
+             @
+             #!/bin/bash
+             
+             echo "file" > file    #File wih itself as the title 
+             echo "./abc" > abc    #File with the path to itself as the title
+             find . -type f -execdir grep {} {} \; 
+             @
+            
+            ./abc
+
+             //Only shows the file with the path to itself
+            }}}4
+        }}}3
+
+    }}}2
 }}}
 
 Scary stuff {{{
