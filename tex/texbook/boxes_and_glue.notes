@@ -1,0 +1,68 @@
+BOXES {{{
+
+From Tex's viewpoint, every single char is a box.
+They have a height and width (h's height = 6.9444) in \cmr10
+Stuff inside a box can reach outside of itself (mostly slanted letters do this)
+
+use
+\hrule
+for a horizontal line across the screen, and
+
+\vrule
+for a vertical 1 box line
+
+If you want to mess with stuff, you can do
+\hbox{A line of stuff}
+to make a horizontal line of text
+
+If you really want to mess with stuff, you can do
+\vbox{\hbox{Top line}\hbox{Bottom Line}}
+
+to produce
+	Topline
+	Bottom Line
+
+Theres way more stuff you can do with this
+}}}
+
+GLUE {{{
+
+All glue has a:
+    space	    {What it "wants" to look like}
+    stretch	    {Factors of what it can look like}
+    shrink	    {How much smaller it can get than defined by space}
+
+To ignore this, just use
+\smallskip
+
+for a small break,
+\medskip
+
+for a medium, or
+\bigskip
+
+for 2 medskips.
+
+This is important for centering, \centerline creates infinite glue on either side of whatever you're typing
+
+\vfil
+makes a new page
+Theres also a lot of different infinities, but they are wacky.
+
+To natively center stuff, use \hfil
+\line{This is on the left\hfil}
+\line{\hfil On the right}
+\line{\hfil Centered \hfil}
+\line{On the left \hfil centered \hfil on the right}
+
+\line{\hfil\hfil two thirds over \hfil}
+\line{\hfill\hfil all the way right \hfil}
+
+TeX automaticly pits glue after punctuation so that lines look better
+Also rememver to use ~s when using titles like Dr.~Minster
+
+Mr.~\&~Mrs.~User were married by Rev.~Drofnags, who preached on Matt.~19:3--9.
+
+Donald~E.~Knuth, ``Mathematical typography,'' {\it Bull.~Amer.~Math.~Soc.} {\bf 1} (1979), 337--372.
+
+}}}

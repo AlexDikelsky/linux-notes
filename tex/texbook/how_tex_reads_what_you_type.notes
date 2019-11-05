@@ -1,0 +1,22 @@
+Has a bunch of catagories for each word.
+
+num      meaning       char                      literal (if not listed just backslask)
+ 0      Ecape char      \			\backslash 
+ 1	Begin group	{                       
+ 2	end group	}
+ 3	math shift	$
+ 4	alignment tab	&
+ 5	EOL		<return>
+ 6	parameter	#
+ 7	superscript	^
+ 8	subscript	_
+ 9	ignored char	<null>
+ 10	space		<space>
+ 11	letter		[A-Za-z]
+ 12	other char	anything not listed
+ 13	Active char	~
+ 14	Comment		%
+ 15	invalid char	<delete>
+
+
+\backslash instead of \\ because you can redefine \\ to whatever you want

@@ -1,0 +1,45 @@
+====================
+Sed notes
+====================
+
+How it actually works {{{
+
+    Commands are applied to a `pattern space` (PS). The buffer is cleared after each new line
+    The `Hold space`(HS) isn't cleared after each new line, however you cannot directly access the information stored inside. You must first switch it into the `pattern space`.
+
+    Both start out empty
+
+}}}
+
+Remove given lines {{{
+    Remove lines 1, 2, and 5 with
+    ./programs/skiplines.sed
+        or
+    $ cat testfiles/books.txt | sed -e '1d' -e '2d' -e '5d' -e '100d'
+}}}
+
+Print every line twice {{{
+    ./programs/print_twice.sed
+    $ sed -e '' -e 'p' testfiles/quote.txt
+    
+    -e means the next arg will be an editor command
+        -e '' means just do whatever you were going to do
+        -e 'p' means print out the command
+}}}
+
+Labels {{{
+    
+    Labels are how you control flow in sed
+    For instance, 
+
+
+    h     `writes the PS to HS`
+    n     `writes HS to PS`
+    H     `appends PS to HS`
+    x     `swaps HS and PS`
+    s/\n/, /    `replace \n with ,`
+    /Paulo/!b Skip `Pretty sure this checks if "Paulo" is in PS. If yes, continue.`
+                    `If no, jump to the :Skip label`
+    s/^/- /
+    :Skip
+    p

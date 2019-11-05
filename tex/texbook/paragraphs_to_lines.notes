@@ -1,0 +1,30 @@
+TeX finds a 'badness' rating, and makes choices off of that.
+To fix it yourself, use "~" characters, called "ties"
+
+It's usefule for Chapter~12, Theorem~1.2, Appenxix~A, and many more
+
+
+    (cf.~Chapter~12).
+    Chapters 12 and~21.
+    line~16 of Chapter~6's {\tt story}
+    lines 7 to~11
+    lines 2,~3 4, and~5.
+    (2)~a big black bar
+    all 256~characters are initally of catagory~12,
+    letter~x in family~1.
+    the factor~$f$, where $n$~is 1000~times~$f$
+
+    for all $n$~greater than~$n_0$
+
+    excercise \hbox{4.3.2--15}     %Garentees that there won't be a break in the word
+
+    It's better to do
+	Chapter~12
+    than it is to do
+	\hbox{Chapter 12}
+    beause the first one allows the word "chapter" to be broken by a hyphen, and because the space between Chapter~12 can be resized, but not with \hbox{}.
+
+    \hbox{$x=0$}
+	slightly better way would be
+	    $x=\nobreak0$
+	because this doesnt break the glue

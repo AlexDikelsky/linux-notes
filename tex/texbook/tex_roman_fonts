@@ -1,0 +1,11 @@
+Theres lots of accents you can do easily
+
+If you ever need a hungarian accent, do
+
+abc\H{o}sd
+
+To type naive, you need to do
+
+na\"\i{}ve
+
+The \" adds an umlat, and the \i{} removes the dot on the I
