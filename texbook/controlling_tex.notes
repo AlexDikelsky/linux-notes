@@ -1,0 +1,23 @@
+Control sequences:
+    Control symbol := \\[^A-Zz-z]
+	Accent
+    	\'o
+    	Omlunte
+    	\"o
+    
+    Control words := \\[A-Za-z]
+	\input FILENAME
+	
+	to put a space after a control words, do \<space> (replace <space> with a literal space)
+
+excercises:
+
+WHat are he control seqs in 
+    `\I'm \excercise3.1\\!'
+
+\I is a control word
+\excercise is a control word
+\\ is a literal backslash, control symbol
+
+How do you change the direction of an accent?
+    \`a

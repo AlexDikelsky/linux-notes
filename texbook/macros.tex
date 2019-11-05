@@ -1,0 +1,18 @@
+\def\musnt{I must not talk in class\par}
+\def\five{\musnt\musnt\musnt\musnt\musnt}
+\def\punishment{\five\five\five\five\five\five\five\five\five\five\five\five\five\five\five\five\five\five\five\five}
+
+\def\a{\b}
+\def\b{A\def\a{B\def\a{C\def\a{\b}}}}
+\def\puzzle{\a\a\a\a\a}
+
+\def\row#1{$(#1_1, \ldots, #1_n)$}
+
+\def\pun#1#2{I must not #1 in #2\par}
+\def\punfive#1#2{\pun{#1}{#2}\pun{#1}{#2}\pun{#1}{#2}\pun{#1}{#2}\pun{#1}{#2}}
+\def\puntwen#1#2{\punfive{#1}{#2}\punfive{#1}{#2}\punfive{#1}{#2}\punfive{#1}{#2}\punfive{#1}{#2}}
+\def\punhund#1#2{\puntwen{#1}{#2}\puntwen{#1}{#2}\puntwen{#1}{#2}\puntwen{#1}{#2}\puntwen{#1}{#2}}
+
+\punhund{run}{the halls}
+
+\end

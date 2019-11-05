@@ -1,0 +1,99 @@
+Puncttuation {{{
+Make sure to put punctionation after $, but before $$s
+for $x = a, b$ or $c$, the better way is
+for $x = a$, $b$, or~$c$
+because of how stuff is set}}}
+
+Roman in formulas {{{
+Also, use \cos rather than changing what mode you're in.
+
+If you need to make something in normal case, just do
+$\sqrt{\hbox{Stuff in roman font}(x)}$
+
+or
+$\sqrt{\rm{Stuff\ in\ roman\ font}(x)}$
+
+note that you need to backslash spaces
+
+
+the mod operatior is a little weird
+\bmod
+is a binary operator, but
+\pmod 
+adds its own parenthesis in around it
+}}}
+
+Spacing between formulas{{{
+You can also add spacing between formulas pretty easily. Just do \quad or \qquad for tabs.
+}}}
+
+Spacing in formulas {{{
+Spacing in formulas is usually automatic, but you can change stuff by doing:
+
+\,	for a thin space
+\>	medium
+\;	thick
+\!	negative space
+
+use \,dx for calculus stuff, and for units, ie:
+$18\, {\rm mi/hr}$
+
+Also use \, for after factorials.
+}}}
+
+Ellipses {{{
+\ldots
+for lowerdots,		between commas
+\cdots
+for centreed dots	for between +, -, *k
+
+If an ellipses occures right before a punctuation mark or delimiter, do a \, before the end
+}}}
+
+Line breaking {{{1
+
+you can do \allowbreak
+if you want a break
+
+You can also do \nobreak 
+if you dont want a break
+
+}}}
+
+Braces {{{
+
+Usually their fine just do \{
+
+If you're doing
+{ x | x > 5 }
+type
+$\{\, x \mid x \gt 5 \, \}$j
+
+where \mid is the |
+
+For cases, do this:
+$$
+f(x) = \cases{   1/3   &if $0 \le x \le 1$;\cr
+	        2/3   &if $3 \le x \le 4$;\cr
+		0     &elsewhere.\cr
+	    }
+$$
+
+You can also do overbraces with
+$$\overbrace{x + y}^{k\rm\; times}$$
+
+and simular (swap ^ to _) for \underbrace s
+
+}}}
+
+Matrices {{{
+
+Do
+\matrix{
+    a&b&c \cr
+    d&e&f \cr
+}
+
+}}}
+
+

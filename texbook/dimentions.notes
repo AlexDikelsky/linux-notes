@@ -1,0 +1,16 @@
+When specifuing a font or an area like \hsize, you can use certain numbers to change stuff.
+For instance, 
+
+\hsize=20in %makes a column that is 20 inches long.
+\vskip.5cm  %Skips .5 cm of space below whatever you typed
+\vskip19pt  %Skip 19 points
+
+You can also magnify the type of an entire document by saying
+\magnification=2000
+to double, 
+\magnification=1000
+for default, or
+\magnification=500
+to halve the normal value
+
+

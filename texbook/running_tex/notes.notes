@@ -1,0 +1,11 @@
+Comment with %
+\hsize=4in
+changes the column size to 4in
+
+when typung stuff like Mr. Alex, instead type Mr.~Alex.
+The ~ acts as a "tie" between the two words
+
+
+Error messages:
+    Type "E" to open the thing in vim to change it
+    You can also change \vship to \vskip by doing I\vskip on the \vship error

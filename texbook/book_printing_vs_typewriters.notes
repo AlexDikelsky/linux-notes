@@ -1,0 +1,28 @@
+A ``SDASDf''
+\newline
+hypen = -
+\newline
+en-dash = --
+\newline
+em-dash = ---
+\newline
+minus sign = $-$
+
+
+Type: 
+Alice said, ``I always use an en-dash
+instead of  hyphen when specifying page
+numbers like `480--491' in a 
+bibliograhy.''
+
+
+test = ----
+This produces an em dash and a hyphen
+
+Lingautures test\newline
+    find\newline
+    AV\newline
+    fluffier\newline
+
+notice that the letters in fluffier are connected
+
