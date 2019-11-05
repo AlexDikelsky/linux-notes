@@ -1,0 +1,7 @@
+1026	0	alex dikelsky
+1026	123456	alex dkelsky
+1234	1.00	ale
+1234	1	ale
+1234	2	alef
+1245	22	sdf
+1245	50	sdf
