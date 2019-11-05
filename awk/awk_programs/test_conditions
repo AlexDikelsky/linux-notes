@@ -1,0 +1,4 @@
+NF != 7			does not have 7 fields
+$1 ~ /[^A-Za-z0-9]/	nonalphanumeric password
+$2 == ""		no password
+BEGIN			FS="\t"

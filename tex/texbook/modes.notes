@@ -1,9 +1,0 @@
-Modes:
- Vertical		    (Build main vertical list from whence pages of output are derived)
- internal vertical mode  (Vertical list for a vbox)
- Horizontal mode	    (Build a paragraph)
- Restricted Horizontal   (Build a horizontal list for an hbox)
- Math mode		    (Build a formula to be placed in a horizonal list)
- Display math mode  (Build math formula to be placed on a line by itself, interuppting the current paragraph)
-
-Display math mode= use $$ to put math on its own line
