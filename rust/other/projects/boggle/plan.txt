@@ -1,0 +1,16 @@
+Boggle Solver	
+	Board itself:
+		Create a NxN 2d array of random chars
+	Solver:
+		Look at the surrounding strings of 3 character, and keep track of their locations
+
+		If a string of 3 is the start of an unused word:
+			Search surrounding letters and keep track of location
+			
+			If a string of 3 is a word:
+				Add it to the list of words
+
+		Else
+			Check next word
+
+		Print a list of all possible words and the points the words add up to

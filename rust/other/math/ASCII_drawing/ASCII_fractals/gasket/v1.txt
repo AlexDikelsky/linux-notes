@@ -1,0 +1,41 @@
+extern crate line_drawing;
+use std::mem;
+use line_drawing::Bresenham;
+
+fn make_grid(size: usize) -> Vec<Vec<bool>> {
+    let vec = vec![vec![false; size]; size];
+    vec
+}
+
+fn print_grid(x: Vec<Vec<bool>>) {
+    for i in x {
+        for j in i {
+            if j == false {
+                print!("- ");
+            }
+            else {
+                print!("X ");
+            }
+        }
+        println!();
+    }
+}
+
+
+fn main() {
+    let size = 27;
+    let mut grid = make_grid(size);
+    let points = Bresenham::new((0, 0), (5, 6));
+
+    for r in 0..size {
+        for c in 0..size {
+            for p in points {
+                if (r, c) == p {
+                    mem::replace(&mut grid[r][c], true);
+                }
+            }
+        }
+    }
+    print_grid(grid);
+}
+

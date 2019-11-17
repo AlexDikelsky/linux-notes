@@ -1,0 +1,27 @@
+fn main(){
+    //Scalar Types
+
+    //Integers
+
+    //Goes to max value of the data type
+    /*let mut x: i16 = 0;
+    loop {
+        println!("{}", x);
+        x += 1;
+    }*/
+    
+    let x = 9;
+    let y = 4;
+    let z = x / y;
+    println!("{} / {} = {}", x, y, z);
+
+    //Crashes
+    //let x: f64 = x;
+    //let a = 9 * 1.0;
+
+
+    //Booleans
+    //let t = true;
+
+    //Chars are specified with single quotes
+}

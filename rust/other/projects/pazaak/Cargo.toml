@@ -1,0 +1,8 @@
+[package]
+name = "pazaak"
+version = "0.1.0"
+authors = ["Alex Dikelsky"]
+edition = "2018"
+
+[dependencies]
+rand = "0.6"

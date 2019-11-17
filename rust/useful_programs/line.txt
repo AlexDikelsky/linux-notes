@@ -1,0 +1,51 @@
+use std::mem;
+extern crate bresenham;
+use bresenham::Bresenham;
+
+fn make_grid(size: usize) -> Vec<Vec<bool>> {
+    let vec = vec![vec![false; size]; size];
+    vec
+}
+
+fn print_grid(x: Vec<Vec<bool>>) {
+    for i in x {
+        for j in i {
+            if j == false {
+                print!("- ");
+            }
+            else {
+                print!("X ");
+            }
+        }
+        println!();
+    }
+}
+
+fn bresen_vec(start: (isize, isize), end: (isize, isize)) -> Vec<(isize, isize)> {
+    let line = Bresenham::new(start, end);
+    let mut as_vec = vec![];
+    for x in line {
+        as_vec.push((x.0, x.1));
+    }
+    as_vec
+}
+
+fn main() {
+    let size = 27;
+    
+    let line = bresen_vec((0, 1), (15, 4));
+
+    let mut grid = make_grid(size);
+    for r in 0..size { 
+        for c in 0..size {
+            for point in &line {
+                if &(r as isize, c as isize) == point {
+                    mem::replace(&mut grid[r][c], true);
+                }
+            }
+        }
+    }
+    print_grid(grid);
+}
+
+    
