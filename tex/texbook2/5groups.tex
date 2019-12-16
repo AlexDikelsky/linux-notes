@@ -1,0 +1,31 @@
+%You can group stuff with {}s
+%If you define something inside a {}, it will become undefined outside of it
+%This is like definig a scope and local variables/functions
+%You can end stuff if you do \TeX{}, although {\TeX} looks nicer imo
+
+%Ex 5.1
+shelf{}ful
+
+%Ex 5.2
+start{ }{ }{ }end
+
+%Ex 5.3
+\centerline{This is {centered}}
+\centerline This is not
+\centerline{This is centered, and \it this is italicised}
+
+%Ex 5.4
+\def\ital#1{\it#1\/}
+
+{\ital{asdfsdf} \rm sdfsdf}\par
+{\it asdfsdf \rm sdfsdf}
+%You don't have to remember, but it's less flexable.
+
+%You can make stuff global
+%\global\advance\count0 by 1
+%Youn can also make named blocks like
+\beginthe{beguine}\beginthe{inside}\endthe{inside}\endthe{beguine}
+
+
+
+\end

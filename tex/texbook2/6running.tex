@@ -1,0 +1,41 @@
+%Badness is a measure of how messed up a line is
+%Change the margin size by
+    %\hsize 1in
+%You can change what the worst case is by doing
+    %\tolerance=10000
+%The max value is 10000
+%You can also do 
+    %\raggedright
+%to get ragged right lines
+
+%EX 6.5
+%Find out sow much badness is applied to a particular line
+
+\hsize 1.5in
+\hbadness=-1    %This causes all of the stuff to be printed
+\tolerance=10000
+\raggedright
+
+% story {{{
+\hrule
+\vskip 1in
+\centerline{\bf A SHORT \ERROR STORY}
+\vskip 6pt
+\centerline{\sl by A. U. Thor}
+\vskip .5cm
+Once upon a time, in a distant
+    galaxy called \"O\"o\c c,
+there lived a computer
+named R.~J. Drofnats.
+
+Mr.~Drofnats---or ``R. J.'' as
+he preferred to be called---% error fixed
+was happiest when he was at work
+typesetting beautiful doucments.
+\vskip 1in
+\hrule
+\vfill\eject
+\end
+%}}}
+
+%You can do \hfuzz=1pt to add more bounds on the length over the end of the right margin
