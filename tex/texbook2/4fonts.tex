@@ -1,0 +1,45 @@
+\sl Slanted \rm Roman \it italics \tt typewroter \bf bold \rm
+
+%Slanted is just slanted letters, but \it actually changes the letters themselves
+%Use grouping rahter than raw \tt\ s though, thorugh {\sl sdf}
+
+%Ex 4.1
+Ulrich Dieter, {\sl Journal f\"ur die reine und angewandte Mathematik} {\bf 201} (1959), 37--70.
+
+%Make sure to always \/ after slanted stuff, unless the next letter is a . or ,
+
+%Ex 4.2
+{\it Explain how to typeset a\/ {\rm roman} word in an italicisez sntence}
+
+{\bf `f'}
+{\bf `f\/'}
+
+%RETURN
+%EX 4.3
+%\def\ic#1{\setbox0=\hbox{#1\/}\dimen0=\wd0
+%\setbox0=\hbox{#1}\advance\dimen0 by -\wd0}
+
+{\tenrm asdf}
+%Doens't look like a thing anymore
+
+%EX 4.4
+%You have to do tenrm ranther than 10rm becuse it does \1 rather than read the whole thing
+{\sl sdf}
+\def\sl{\it}
+{\sl sdf}
+
+%This increases the size directly
+\font\ma=cmr5 at 15pt
+
+%This scales the thing.
+\font\md=cmr5 scaled 3000
+
+%don't do either though, it donsn't look spectacular.
+
+%\magstep0 is also a thing but it's not that important
+
+{\ma sdffis}
+{\md ote}
+
+
+\end

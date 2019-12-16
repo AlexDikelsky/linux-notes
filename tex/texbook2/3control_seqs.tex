@@ -1,0 +1,41 @@
+%\input MS
+%makes tex read MS.tex
+%2 types, control words and control symbols
+    %\input
+    %\hbox
+%are control words, and
+    %\;
+    %\,
+%are control symbols
+
+%Ex 3.1
+%\I'm \exercise3.1\\!
+%   Control words:
+%	\exercise
+%	\I
+%    Control symbols:
+%	\\
+%
+
+%Excercise 3.2
+math\'ematique, centim\`etre
+
+\TeX has spaces\par
+\TeX\ words\par
+%The second one looks nicer because theres space between TeX and words
+
+%Theres about 900 control seqs
+%300 are primitive atoms
+%Don't use these often since they're really small
+
+%You can do \show\cs to find what the documentation is for this stuff
+%Ex 3.3
+%\show\
+%\show\ 
+%This means that \ is a version of \ 
+
+%Ex 3.4 How many control seqs of len 2 are possible, how many of len 3?
+%256 for len 2 because that's how many chars are in ASCII
+%(2*26)² because special chars stop. It's *2 because upper and lower case
+
+\end
