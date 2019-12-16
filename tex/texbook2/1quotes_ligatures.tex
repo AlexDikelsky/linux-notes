@@ -1,0 +1,34 @@
+%Ex 2.1
+Alice said, ``I always use an en-dash instead of a hyphen when specifying page number like `480--491' in a bibliography.''
+
+%Ex 2.2
+%What happens with 4 -s in a row? You get an em dash and a hypen like —-
+
+%Ex 2.3
+%Find a word with 2 ligatures
+%Do 
+    %grep "ff" /usr/share/dict/american-english | 
+    %awk '{gsub(/ff/, ""), print}' | grep "fi"
+%then do a secondary serach for the resturned results.
+%Fisticuffs works
+
+$\part$
+
+
+%When you have something like:
+%A said "B said 'This is a sentence'"
+%you need to add a \thinspace
+
+%Ex 2.4
+A said ``B said `This is a sentence'\thinspace''
+%For "' and '" you do
+``\thinspace`Importnat words.' said P'' said Q.
+
+`{}``Importnat words.' said P'' said Q.
+
+%ex 2.5
+%Use \thinspace rahter than '$\,$'' because
+%mathsurround might break some stuff, also the width is locked
+%to the width of a \,
+
+\end
