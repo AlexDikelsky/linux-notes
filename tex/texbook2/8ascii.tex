@@ -1,0 +1,103 @@
+%the \char macro lets you type stuff in terms of ascii values
+
+\char98 u\char98 \char98 le  %Types bubble but weirdly
+\char123
+
+%Ex 8.1
+%   \def\%{\char`\%}
+%works rather than
+%   \def\%{\char`%}
+%because the second % is treated as a comment rather than a character
+
+You can also type styff with a bunch of carrot chars like
+^^_ or ^^7 or ^^ff.
+%This makes char ff one of the math symbols
+\catcode`^^ff=3
+
+^^ff sasf ^^ff
+
+%You can also mess around with % and ^I with ^^M and ^^I
+
+%Tex reads a sequence of lines
+%The computer is always oin ne of these states:
+%   State N	Start of line
+%   State M	Middle of line
+%   State S	Skipping blanks
+%Not the same as modes
+%States: eyes and mouth
+%Modes : gastro-intestional tract
+
+%TeX deletes and <space> chars at the right of an input line
+%Then it inserts a <cr>
+
+%If it sees a catcode=0, it reads. If it sees:
+    %an empty name (\csname\endcsname) 
+	%state -> M
+
+    %not in cat 11 -> just that symbol
+	%state -> depends
+
+    %a bunch of letters -> go until the next nonletter
+	%This becomes a cs token, like hbox in the example earlier
+	%Then state S
+
+%If it sees catcode=7 (superscript), and next char is the same thing:
+    %if next thing is a num < 128, they are deleted & 64 is added to c
+    %If the next thing is hex, all chars are repalced with that value
+
+%If it sees anything not 0, 5, 7, 9, 10, 14, 15
+    %or a normal catcode=7, then
+	%Convert it to a token
+	%Go to state M
+
+%catcode = 5
+%   Throw everything away. If already in N, \par
+%   Otherwise, consider it a space
+
+%catcode = 9
+    %Ignore it
+
+%EX 8.2
+% a)  what is the difference between cat 5 and cat 14?
+%	cat 5 -> if theres 2 in a row, insert a \par, which cat 14 doesnt do
+%	cat 14-> throws away the rest of the line always
+% b)  What is the difference between 3 and 4?
+%	Nothing in this case, 
+% c)  what is the difference between 11 and 12?
+%	11 can be part of a command seq, while 12 cannot
+% d)  are spaces ignored after active chars?
+%	No
+% e)  when a line ends with a comment, are spaces ignored at the start of the next line?
+%	Yes, by defnintion because it will be in state N
+% f)  can an ignored char be in the middle of a cs?
+%	No
+
+%EX 8.3
+%When tex runs into an undef cs, it is in state S because
+%you can have as many blanks as you want between \cs and the args
+    %\vship 1in
+%it was about to read the 1
+
+%EX 8.4
+%Assume that normal cat codes are used, except
+%^^A -> 0
+%^^B -> 7
+%^^C -> 10
+%^^M -> 11
+%What is produced by
+    %^^B^^BM^^A^^B^^C^^M^^@\M 
+\catcode`^^A=0
+%\catcode`^^B=7
+\catcode`^^C=10
+\catcode`^^M=11
+%^^B%^^BM^^A^^B^^C^^M^^@\M 
+
+
+%Example question
+\catcode`i=7    %Rebinds i as the superscript char
+\catcode`^^f9=3
+
+%i^f9 sdf iif9  %Can't do this, the i^ breaks stuff
+iif9 abc iif9
+
+\end

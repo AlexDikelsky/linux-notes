@@ -1,0 +1,57 @@
+%List of catcodes: {{{
+%   0   escape        \
+%   1   begin         {
+%   2   end           }
+%   3   math shift    $
+%   4   align tab     &
+%   5   EOL           EOL
+%   6   param         #
+%   7   SUperscript   ^
+%   8   Subscript     _
+%   9   Ignored char  <null>
+%   10  Space         \space
+%   11  Letter	  [a-zA-Z]
+%   12  Other char    none of the above
+%   13  active char   ~
+%   14  Comment char  %
+%   15  Invalid char  <del>
+%}}}
+
+%This creaets a lot of errors
+%Procter & Gamble's Stock climbed to $2, a  10% gain
+
+%Ex 7.2
+%\\ isn't mapped to literal \s because it's easy to remap it to something more useful this way
+
+%TeX reads stuff as a stream of tokens
+%Tokens are either a single char, or a control seq.
+%When the following is read in, TeX reads it as
+%   {\hskip 36pt}
+%it reads it as
+%   {₁  HSKIP  3₁₂   6₁₂   _₁₀  p₁₁    t₁₁  }₂
+
+%You can define your own catcodes like this
+
+
+{
+\catcode`\<=1 
+\catcode`\>=2
+Words <\it this part is in italics delimited by angle brackets>
+}   %You can end this with either a } or a > because both send catagory code 2
+Stuff after. Here < and > have their normal wacky meanings
+
+%This produces ``TeX, replacing the \ for ``.
+\string\TeX
+
+You can do stuff like \csname TeX\endcsname
+to construct commads from lists of catagory codes. That lets you type
+$\backslash$\TeX  like this  \csname \string TeX\endcsname
+
+so \string ~ sdf  %This makes a normal tilde character
+
+\catcode`\?=14
+?You can do wacky stuff with this, like making this line a comment
+\catcode`\!=3
+!5 Math x+2={3\over{y}}5!
+
+\end
