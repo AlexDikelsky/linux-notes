@@ -1,0 +1,54 @@
+%Boxes are the atoms of TeX's
+%They have a 
+%   height, width, and depth
+%          
+%          
+%                 __________________
+%                 |                |   ^
+%          R      |                |   |
+%          e      |                |   |  height
+%          f      |                |   | 
+%                 |                |   |
+%          p      |                |   |
+%          o -->  |________________|   v
+%          i      |   Baseline     |   ^
+%          n      |                |   |  depth
+%          t      |________________|   v  
+%                 
+%                 <---------------->
+%                       width
+
+%Ink doesn't have to go inside the box, they just provide a referance point
+\hrule width1in height1in
+
+\vskip 2in
+words
+\hrule width1in height1ex
+mroe
+
+%you can make bboxes with \hbox
+
+\par
+\hbox{\hbox{A}\hbox{ }\hbox{w}\hbox{o}\hbox{r}\hbox{d}}\par
+un hboxed\par
+\hbox{A word}\par
+
+\vskip 2pt
+\vbox{\hbox{Line 1}\hbox{line2}}
+
+%You can give neg values for some stuff, but not partuculary useful
+
+\setbox0=\hbox{T\kern-.1667em\lower.5ex\hbox{E}\kern-.125em X}
+\box0
+
+%EX 11.1
+%Theres 2 dots because it's a box inside a box
+
+%EX 11.2
+%Find how italic corrections are treated by boxes
+\it{
+sdf\hbox{\/P\/\/}sdf
+}
+%I think it applys it to particular letters
+
+\end
