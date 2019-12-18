@@ -1,0 +1,118 @@
+%When you make a series of boxes, glue is put between them
+%Glue has 3 parameters:
+%   space   (ideal size)
+%   stretch (coefficent by which to stretch)
+%   shrink   (minimum size)
+%Example:
+
+%  _____
+% |     |          ______           ___
+% |     |    9    |      |    9    |   |      12     ________ 
+% |     |+++++++++|      |+++++++++|   |++++++++++++|        |
+% |     |         |      |         |   |            |        |
+% |_____|         |______|         |___|            |        |
+%   5     st=3       6      st=6     3     st=0     |________|
+%	  sh=1              sh=2           sh=0          8   
+
+%The ideal length is
+    %5+9+6+9+3+12+8 = 52
+%where you just add the lengths and the space of glue
+%If you want to make the len=58, you:
+    %1 find the total stretchability of the line  (in this case 3+6, or 9)
+    %2 find how much space needs to be covered (new len - ideal len) (58-52, or 6)
+    %3 for each glue, do
+    %	    sp + (total_width / total_stretch) * st
+%
+%We have \hfil and \hfill to fill space, along with \vfil and \vfill
+%You can tell the compiler to stop complaining with \hss, which means 
+%make glue that can both shrink and stretch infinately. \vss does simular things
+%You can negate with \vfilneg or \hfilneg
+
+%Specify glue by typeing
+%\vskip 2pt plus 3pt minus 1pt
+%       ^       ^        ^
+%    space   stretch   shrink
+
+\line{Flush left\hfil}
+\line{\hfil flush right}
+\line{\hfil centered\hfil}
+\line{some left\hfil osome right}
+
+%EX 12.2
+\line{\hfil\hfil Where? \hfil}  %This makes something a third of the way to the right
+\line{\hfill\hfil where?\hfil}  %flush right
+
+%EX 12.3
+\def\centera#1{\line{\hfil#1\hfil}}
+\def\centerb#1{\line{\hfill#1\hfill}}
+\def\centerc#1{\line{\hss#1\hss}}
+
+\centera{words}
+\centerb{words}
+\centerc{words}
+
+%You can do stuff like
+%\vskip 0pt plus 1fill
+
+%\vfil is the same as \vskip 0pt plus 1fil
+
+%EX 12.4
+Mr.~\& Mrs.~User were married by Rev.~Drofnats,
+who preached on Matt.~19\thinspace:\thinspace3--9.
+
+%EX 12.5
+Donald~E.\ Knuth, ``Mathematical typography,'' {\sl Bull.\ Amer.\ Math.\ Soc.\ {\bf 1}} (1979), 337--372.
+%You technicly don't need the `\ ` after E because punctuation after capital letters is considered to be not a full stop char
+
+%EX 12.6
+lasd \hbox{A}. dsf
+%to make sure the period kerning is correct
+
+\tolerance=10000
+
+\hbox to 103pt{``a b c d e''}   %This specifies the size of the hbox
+\hbox to 13pt{``a b c d e''}    
+
+%Specify exact spreading and shrinking
+\hbox spread 123pt{``words that get spread out a lot''}
+\hbox spread 32pt{``words that get spread out a lot''}
+\hbox {``words that get spread out a lot''}
+
+%EX 12.8
+%box1 = 1pt high, 1pt deep, 1pt wide
+%box2 = 2pt high, 2pt deep, 2pt wide
+    %\setbox3=\hbox to3pt{\hfil\lower3pt\box1\hskip-3pt plus3fil\box2}
+    %Find height, width and depth of box 3, and position of 1 and 2 with respect to box 3
+%width=3
+%hfil just makes stuff on the right of the 3pt
+%lower makes it below the line]
+%it then places box 1 there
+%then it goes back a few spaces, and has glue to put box2
+%box _+
+
+%\vbox stuff stacks it verticly because it would look bad if line sizes 
+%depended on the height of the letters
+%You can use \baselineskip, \lineskip, and \lineskiplimit
+%to make it look nice
+%\baselineskip and \lineskip take a glue as an argument, while
+%\lineskip takes a dimension.
+
+%TeX tries to make every line use baselineskip
+%   However, if that glue value causes the distance to be lower than the \lineskiplimit,
+%   \lineskip is used instead.
+
+%\lineskiplimit=123pt
+%\showthe\lineskiplimit
+
+\baselineskip=12pt plus 2pt
+\lineskip=3pt minus 1pt
+\lineskiplimit=2pt
+%Generally you should only let \baselineskip have stretch values
+%if you're doing a one page document
+asdfsg sdf sdf sd gdf g d fgd us sfusidufhisudg sd fsdgsd sdyyk
+asdfsg sdf sdf sd gdf g d fgd us sfusidufhisudg sd fsdgsd sdyyk
+asdfsg sdf sdf sd gdf g d fgd us sfusidufhisudg sd fsdgsd sdyyk
+asdfsg sdf sdf sd gdf g d fgd us sfusidufhisudg sd fsdgsd sdyyk
+
+\end
+
