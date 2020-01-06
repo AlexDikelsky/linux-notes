@@ -11,4 +11,4 @@ c = mm.run(mm.compose([1, 1]), a, b, 100)
 for p in c:
     print("N =", str(p[0]) + "\t\tFactors = " + str(mm.remove_zeros_decompose(p[0])))
 
-
+print(mm.decompose(39))
