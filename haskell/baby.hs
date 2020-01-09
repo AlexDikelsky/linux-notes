@@ -151,3 +151,17 @@ describeList xs = "The list is " ++
                [x] -> "A singelton."
 	       xs -> "Longer"
 
+max' :: (Ord a) => [a] -> a
+max' [] = error "Max of empty list"
+max' [single_value] = single_value
+max' (first_elemet:rest_of_list)
+  | first_elemet > max_of_tail = first_elemet
+  | otherwise   = max_of_tail
+  where maxTail = max' rest_of_list
+
+--When you a list of len 1, return that number
+--Look at the first value of the list
+-- if the first value is greater than all values at the end of the list
+--  return x and end
+-- otherwise
+--  get the max of the other elements
