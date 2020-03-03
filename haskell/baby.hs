@@ -155,9 +155,14 @@ max' :: (Ord a) => [a] -> a
 max' [] = error "Max of empty list"
 max' [single_value] = single_value
 max' (first_elemet:rest_of_list)
-  | first_elemet > max_of_tail = first_elemet
-  | otherwise   = max_of_tail
+  | first_elemet > maxTail = first_elemet
+  | otherwise   = maxTail
   where maxTail = max' rest_of_list
+
+max'' :: (Ord a) => [a] -> a
+max'' [] = error "Max of empty list"
+max'' [x] = x
+max'' (x:xs) = max x (max'' xs)
 
 --When you a list of len 1, return that number
 --Look at the first value of the list
@@ -165,3 +170,27 @@ max' (first_elemet:rest_of_list)
 --  return x and end
 -- otherwise
 --  get the max of the other elements
+
+
+--Replicate
+--  Takes: Int and some element
+--  Returns repitions of that same element
+
+rep :: (Integral a) => b -> a -> [b]
+rep obj times = [obj | _ <- [1..times]]
+
+rep' :: (Num i, Ord i) => i -> a -> [a]
+rep' n x
+  | n <= 0 = []
+  | otherwise = x:rep' (n-1) x
+
+take' :: (Integral a) => a -> [b] -> [b]
+take' n _
+    | n <= 0  = []
+take' _ []  = []
+take' n (x:xs) = x : take' (n-1) xs
+
+--Primes
+--[product (take n [x | x <- [2..], all (/= 0) [x `mod` y | y <- [2..x-1]]]) + 1 | n <- [2..12]]
+
+
